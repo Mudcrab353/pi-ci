@@ -50,6 +50,8 @@ def start(opts):
     -drive file={image_path},format=qcow2,id=hd0,if=none,cache=writeback \
     -device virtio-blk,drive=hd0,bootindex=0 \
     -netdev user,id=mynet,hostfwd=tcp::2222-:22 \
+    -device usb-net,netdev=net1
+    -netdev user,id=net1
     -device virtio-net-pci,netdev=mynet \
     -nographic -no-reboot
     """,
